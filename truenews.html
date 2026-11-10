@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080710">
+
+  <title>TrueNews | Project Details</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(ellipse at 15% 5%, rgba(124, 58, 237, 0.13), transparent 35%),
+        radial-gradient(ellipse at 90% 45%, rgba(14, 165, 233, 0.08), transparent 35%),
+        #080710;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #c084fc, #818cf8, #38bdf8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .glass-card {
+      background: rgba(17, 15, 29, 0.88);
+      border: 1px solid rgba(168, 85, 247, 0.17);
+      backdrop-filter: blur(16px);
+    }
+
+    .video-card {
+      background: linear-gradient(
+        145deg,
+        rgba(124, 58, 237, 0.15),
+        rgba(17, 15, 29, 0.95) 45%,
+        rgba(14, 165, 233, 0.08)
+      );
+    }
+
+    .role-card {
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .role-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(192, 132, 252, 0.55);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen text-white">
+
+  <main class="max-w-7xl mx-auto px-6 md:px-10 py-8 md:py-12">
+
+    <!-- NAVIGATION -->
+    <nav class="mb-12">
+      <a href="index.html"
+        class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-purple-300 transition duration-300">
+        <span class="text-lg">←</span>
+        Back to Portfolio
+      </a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="mb-12">
+
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class="px-3 py-1 rounded-full text-xs font-semibold tracking-wide
+          bg-purple-500/10 text-purple-300 border border-purple-400/20">
+          FEATURED PROJECT
+        </span>
+
+        <span class="text-xs text-gray-500 tracking-widest uppercase">
+          Digital Innovation · 2026
+        </span>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-5">
+        True<span class="gradient-text">News</span>
+      </h1>
+
+      <div class="max-w-3xl">
+        <p class="text-gray-300 text-lg md:text-xl leading-relaxed">
+          A news credibility evaluation application designed to help
+          identify potentially false or misleading information
+          <span class="text-purple-300 font-medium">
+            before it is published.
+          </span>
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3 mt-7">
+        <span class="text-xs text-gray-400 border border-white/10 bg-white/5 px-4 py-2 rounded-full">
+          UI/UX Design
+        </span>
+
+        <span class="text-xs text-gray-400 border border-white/10 bg-white/5 px-4 py-2 rounded-full">
+          Visual Identity
+        </span>
+
+        <span class="text-xs text-gray-400 border border-white/10 bg-white/5 px-4 py-2 rounded-full">
+          Team Leadership
+        </span>
+      </div>
+
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-stretch">
+
+      <!-- LEFT COLUMN -->
+      <div class="lg:col-span-5 flex flex-col gap-6">
+
+        <!-- PROJECT OVERVIEW -->
+        <article class="glass-card rounded-3xl p-7 md:p-8">
+
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/15 flex items-center justify-center">
+              <svg class="w-5 h-5 text-purple-300" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="1.7"
+                  d="M12 6v12m6-6H6"/>
+              </svg>
+            </div>
+
+            <div>
+              <p class="text-xs text-purple-300 uppercase tracking-widest">
+                About the project
+              </p>
+              <h2 class="text-xl font-bold">Project Overview</h2>
+            </div>
+          </div>
+
+          <p class="text-gray-400 text-sm md:text-base leading-7">
+            TrueNews is an application focused on evaluating the
+            credibility of news before it is published or shared.
+            Its purpose is to help users identify potentially false
+            information and encourage more responsible digital
+            communication.
+          </p>
+
+          <div class="mt-7 pt-6 border-t border-white/10">
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-3">
+              Main purpose
+            </p>
+
+            <div class="flex gap-3 items-start">
+              <div class="mt-1 text-purple-400">✦</div>
+              <p class="text-sm text-gray-300 leading-6">
+                Encourage users to verify information and think
+                critically before publishing news.
+              </p>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- MY CONTRIBUTION -->
+        <article class="glass-card rounded-3xl p-7 md:p-8">
+
+          <p class="text-xs text-purple-300 uppercase tracking-widest mb-2">
+            My contribution
+          </p>
+
+          <h2 class="text-2xl font-bold mb-6">
+            My Role in the Project
+          </h2>
+
+          <div class="space-y-5">
+
+            <!-- UI UX -->
+            <div class="role-card flex gap-4 p-4 rounded-2xl border border-white/5 bg-white/[0.025]">
+
+              <div class="w-11 h-11 shrink-0 rounded-xl bg-purple-500/15 flex items-center justify-center">
+                <svg class="w-5 h-5 text-purple-300" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="3"
+                    stroke-width="1.7"/>
+                  <path d="M3 9h18M9 21V9" stroke-width="1.7"/>
+                </svg>
+              </div>
+
+              <div>
+                <h3 class="font-semibold text-white mb-1">
+                  UI/UX Design
+                </h3>
+                <p class="text-sm text-gray-400 leading-6">
+                  Designed the application's interface, focusing on
+                  visual organization and user experience.
+                </p>
+              </div>
+            </div>
+
+            <!-- LOGO -->
+            <div class="role-card flex gap-4 p-4 rounded-2xl border border-white/5 bg-white/[0.025]">
+
+              <div class="w-11 h-11 shrink-0 rounded-xl bg-sky-500/15 flex items-center justify-center">
+                <svg class="w-5 h-5 text-sky-300" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1.7"
+                    d="M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2L12 3z"/>
+                </svg>
+              </div>
+
+              <div>
+                <h3 class="font-semibold text-white mb-1">
+                  Logo & Visual Identity
+                </h3>
+                <p class="text-sm text-gray-400 leading-6">
+                  Created the TrueNews logo and developed the visual
+                  identity of the project.
+                </p>
+              </div>
+            </div>
+
+            <!-- LEADERSHIP -->
+            <div class="role-card flex gap-4 p-4 rounded-2xl border border-white/5 bg-white/[0.025]">
+
+              <div class="w-11 h-11 shrink-0 rounded-xl bg-indigo-500/15 flex items-center justify-center">
+                <svg class="w-5 h-5 text-indigo-300" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1.7"
+                    d="M16 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2m6-10a4 4 0 100-8 4 4 0 000 8zm10 10v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+                </svg>
+              </div>
+
+              <div>
+                <h3 class="font-semibold text-white mb-1">
+                  Team Leadership
+                </h3>
+                <p class="text-sm text-gray-400 leading-6">
+                  Led and coordinated the team throughout the project,
+                  supporting collaboration and progress.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="lg:col-span-7 flex flex-col gap-6">
+
+        <!-- VIDEO -->
+        <article class="glass-card video-card rounded-3xl p-4 md:p-6">
+
+          <div class="flex items-center justify-between gap-3 mb-5 px-1">
+            <div>
+              <p class="text-xs text-purple-300 uppercase tracking-widest mb-1">
+                Project showcase
+              </p>
+              <h2 class="text-xl font-bold">
+                See TrueNews in Action
+              </h2>
+            </div>
+
+            <div class="w-10 h-10 rounded-full bg-purple-500/15 flex items-center justify-center">
+              <svg class="w-5 h-5 text-purple-300" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="1.7"
+                  d="M15 10l4.5-3v10L15 14m-10-5h10v10H5z"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="rounded-2xl overflow-hidden bg-black border border-white/10 shadow-2xl shadow-purple-950/30">
+            <video controls preload="metadata"
+              playsinline
+              class="w-full aspect-video object-contain bg-black">
+
+              <source src="./Videos/truenews.mp4" type="video/mp4">
+
+              Your browser does not support HTML video.
+
+            </video>
+          </div>
+
+          <div class="flex items-center gap-3 mt-5 px-1">
+            <div class="w-1 h-9 rounded-full bg-purple-400"></div>
+
+            <p class="text-sm text-gray-400 leading-6">
+              Watch the presentation to explore the concept and
+              development of TrueNews.
+            </p>
+          </div>
+
+        </article>
+
+        <!-- OBJECTIVE -->
+        <article class="glass-card rounded-3xl p-7 md:p-8">
+
+          <p class="text-xs text-sky-300 uppercase tracking-widest mb-2">
+            Project objective
+          </p>
+
+          <h2 class="text-2xl font-bold mb-4">
+            Promoting responsible information sharing.
+          </h2>
+
+          <p class="text-sm text-gray-400 leading-7">
+            TrueNews aims to make information verification an
+            important step before publishing news, helping users
+            become more conscious of the content they share.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="rounded-full bg-purple-500/10 border border-purple-400/20 text-purple-300 px-3 py-2 text-xs">
+              Critical Thinking
+            </span>
+
+            <span class="rounded-full bg-sky-500/10 border border-sky-400/20 text-sky-300 px-3 py-2 text-xs">
+              Digital Responsibility
+            </span>
+
+            <span class="rounded-full bg-indigo-500/10 border border-indigo-400/20 text-indigo-300 px-3 py-2 text-xs">
+              Information Verification
+            </span>
+          </div>
+
+        </article>
+
+        <!-- LEARNINGS -->
+        <article class="glass-card rounded-3xl p-7 md:p-8">
+
+          <p class="text-xs text-purple-300 uppercase tracking-widest mb-2">
+            Experience
+          </p>
+
+          <h2 class="text-xl font-bold mb-3">
+            What I Learned
+          </h2>
+
+          <p class="text-sm text-gray-400 leading-7">
+            Working on TrueNews helped me strengthen my skills in
+            UI/UX design, visual identity creation, teamwork and
+            leadership. It also gave me the opportunity to
+            coordinate ideas and contribute to the development
+            of a digital solution.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 mt-16 pt-7 pb-4 text-center">
+
+      <a href="index.html"
+        class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-white transition mb-5">
+        ← Explore more projects
+      </a>
+
+      <p class="text-gray-600 text-xs">
+        © 2026 Linsay Orellana · Portfolio
+      </p>
+
+    </footer>
+
+  </main>
+
+</body>
+</html>
+

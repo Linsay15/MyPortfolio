@@ -1,0 +1,1101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Linsay Orellana — UX/UI Designer and aspiring Software Developer">
+
+  <title>Linsay Orellana | Portfolio</title>
+
+  <link rel="icon" type="image/png" href="./logos/logotruenews_mejorado.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: "#a78bfa",
+            dark: "#0e0d18"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --page: #090811;
+      --surface: rgba(255,255,255,.045);
+      --line: rgba(255,255,255,.10);
+      --muted: #a7a3b5;
+      --accent: #b8a2ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      background:
+        radial-gradient(ellipse at 12% 8%, rgba(124,87,220,.13), transparent 34rem),
+        radial-gradient(ellipse at 88% 38%, rgba(57,34,110,.12), transparent 32rem),
+        var(--page);
+      color: #f7f5ff;
+      letter-spacing: .005em;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: rgba(167,139,250,.35);
+      color: white;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(9,8,17,.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    nav a {
+      transition: color .2s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    h1, h2, h3 {
+      text-wrap: balance;
+    }
+
+    p {
+      text-wrap: pretty;
+    }
+
+    main section {
+      scroll-margin-top: 85px;
+    }
+
+    #home {
+      min-height: min(760px, calc(100vh - 76px));
+      display: flex;
+      align-items: center;
+    }
+
+    /* CARD BASE STYLES */
+
+    #about article,
+    #skills .skill-card,
+    #projects .project-card,
+    #certifications article {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+    }
+
+    /* PURPLE OUTLINE ON HOVER */
+
+    #about article:hover,
+    #skills .skill-card:hover,
+    #projects .project-card:hover,
+    #certifications article:hover {
+      background: rgba(255,255,255,.075);
+      border-color: #a78bfa;
+      box-shadow:
+        0 0 0 1px rgba(167,139,250,.35),
+        0 0 22px rgba(139,92,246,.16);
+      transform: translateY(-4px);
+    }
+
+    /* TOUCH DEVICES */
+
+    @media (hover: none) {
+      #about article:active,
+      #skills .skill-card:active,
+      #projects .project-card:active,
+      #certifications article:active {
+        border-color: #a78bfa;
+        box-shadow:
+          0 0 0 1px rgba(167,139,250,.35),
+          0 0 22px rgba(139,92,246,.16);
+      }
+    }
+
+    /* SKILLS - HORIZONTAL MOVING CAROUSEL */
+
+    #skills .skills-carousel {
+      overflow: hidden;
+      width: 100%;
+      padding: 12px 0 20px;
+      mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 5%,
+        black 95%,
+        transparent
+      );
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 5%,
+        black 95%,
+        transparent
+      );
+    }
+
+    #skills .skills-track {
+      display: flex;
+      width: max-content;
+      gap: 16px;
+      animation: skills-scroll 35s linear infinite;
+    }
+
+    #skills .skill-card {
+      flex: 0 0 230px;
+      min-height: 175px;
+    }
+
+    #skills .skills-carousel:hover .skills-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes skills-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* PROJECT CARDS */
+
+    #projects .project-card {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+      min-height: 320px;
+      background: rgba(255,255,255,.035);
+      border-color: var(--line);
+      overflow: hidden;
+      align-items: stretch;
+      border-radius: 18px;
+    }
+
+    #projects .project-visual {
+      min-width: 0;
+      min-height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: clamp(12px, 3vw, 38px);
+      overflow: hidden;
+    }
+
+    #projects .project-visual img {
+      display: block;
+      width: 100%;
+      height: clamp(170px, 22vw, 290px);
+      object-fit: contain;
+      object-position: center;
+      filter: drop-shadow(0 18px 28px rgba(0,0,0,.25));
+      transition: transform .35s ease;
+    }
+
+    #projects .project-card:hover .project-visual img {
+      transform: scale(1.035);
+    }
+
+    #projects .project-info {
+      min-width: 0;
+      padding: clamp(18px, 3vw, 42px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #projects .project-info p {
+      overflow-wrap: break-word;
+    }
+
+    #projects .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    #projects .project-link {
+      width: fit-content;
+      margin-top: 22px;
+    }
+
+    #contact .contact-panel {
+      background: linear-gradient(
+        120deg,
+        rgba(91,57,160,.34),
+        rgba(33,24,55,.72)
+      );
+      border-color: rgba(184,162,255,.22);
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 8px;
+    }
+
+    /* TABLETS AND DESKTOP */
+
+    @media (min-width: 1024px) {
+      #projects .project-card {
+        grid-template-columns: 1.05fr .95fr;
+        min-height: 350px;
+      }
+
+      #projects .project-visual img {
+        height: 290px;
+      }
+
+      #projects .project-info {
+        padding: 42px;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 640px) {
+      #home {
+        min-height: auto;
+      }
+
+      #home h1 {
+        font-size: clamp(2.8rem, 13vw, 4.5rem);
+      }
+
+      #skills .skill-card {
+        flex-basis: 205px;
+      }
+
+      #projects .project-card {
+        grid-template-columns: minmax(105px, .8fr) minmax(0, 1.2fr);
+        min-height: 250px;
+      }
+
+      #projects .project-visual {
+        padding: 10px;
+      }
+
+      #projects .project-visual img {
+        height: 155px;
+      }
+
+      #projects .project-info {
+        padding: 13px;
+      }
+
+      #projects .project-info h3 {
+        font-size: 1.25rem;
+      }
+
+      #projects .project-info p {
+        font-size: 11px;
+        line-height: 1.55;
+      }
+
+      #projects .project-info .project-tags span {
+        font-size: 9px;
+        padding: 4px 7px;
+      }
+
+      #projects .project-link {
+        font-size: 11px;
+        margin-top: 13px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      #projects .project-card {
+        grid-template-columns: minmax(90px, .75fr) minmax(0, 1.25fr);
+      }
+
+      #projects .project-info {
+        padding: 10px;
+      }
+
+      #projects .project-info h3 {
+        font-size: 1.1rem;
+      }
+
+      #projects .project-info p {
+        font-size: 10px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white font-sans">
+
+  <!-- NAVIGATION -->
+  <header class="border-b border-white/10">
+
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-5 flex flex-wrap justify-between items-center gap-4">
+
+      <a href="#home" class="text-xl font-bold tracking-tight">
+        ORELLANA<span class="text-accent">.</span>
+      </a>
+
+      <div class="w-full sm:w-auto flex flex-wrap justify-center gap-3 sm:gap-5 text-xs sm:text-sm text-gray-300">
+
+        <a href="#about" class="text-lg">About me</a>
+        <a href="#skills" class="text-lg">Skills</a>
+        <a href="#projects" class="text-lg">Projects</a>
+        <a href="#certifications" class="text-lg">Certifications</a>
+        <a href="#contact" class="text-lg">Contact</a>
+
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="home" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-28">
+
+      <div class="grid grid-cols-1 sm:grid-cols-[1.2fr_0.8fr] gap-8 md:gap-x-20 items-center">
+
+        <div class="min-w-0">
+
+          <p class="text-accent uppercase tracking-widest text-xs sm:text-sm font-semibold mb-4">
+            Welcome to my portfolio
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight tracking-tight">
+            Welcome!<br>
+            I am <span class="text-purple-500">Linsay</span><br>
+            Orellana.
+          </h1>
+
+          <h2 class="text-lg sm:text-xl md:text-2xl text-gray-300 mt-5">
+            UX/UI Designer · Aspiring Software Developer
+          </h2>
+
+          <p class="text-gray-400 text-sm sm:text-base leading-7 mt-5 max-w-lg">
+            I design clear, accessible, and user-centered digital experiences.
+            I combine creativity, interface design, and technology to turn
+            ideas into useful solutions.
+          </p>
+
+          <div class="flex flex-wrap gap-3 sm:gap-4 mt-8">
+
+            <a href="#projects"
+              class="bg-purple-900 text-white font-bold px-5 sm:px-6 py-3 rounded-xl hover:text-purple-900 hover:bg-white transition duration-300">
+              Explore my work
+            </a>
+
+            <a href="#contact"
+              class="border border-white/20 px-5 sm:px-6 py-3 rounded-xl hover:text-purple-400 hover:border-purple-500 transition duration-300">
+              Contact me
+            </a>
+
+          </div>
+
+          <p class="text-gray-500 text-xs sm:text-sm mt-6">
+            Technology · Design · Continuous learning
+          </p>
+
+        </div>
+
+        <!-- HERO VISUAL - ANIMATED LO CARD -->
+        <div class="flex justify-center items-center min-w-0 py-10 sm:py-16 md:py-20">
+
+          <div class="relative w-full max-w-28 aspect-square sm:max-w-80 md:max-w-[460px] flex items-center justify-center">
+
+            <!-- OUTER ORBIT -->
+            <div class="absolute inset-0 rounded-full border border-violet-500/40"></div>
+
+            <!-- INNER ORBIT -->
+            <div class="absolute inset-4 sm:inset-8 rounded-full border border-dashed border-violet-500/40 animate-[spin_30s_linear_infinite]"></div>
+
+            <!-- ROTATING CARD -->
+            <div class="absolute w-16 h-20 sm:w-44 sm:h-52 md:w-56 md:h-64
+                        rounded-xl sm:rounded-3xl
+                        bg-gradient-to-br from-violet-500 to-purple-950
+                        shadow-[0_0_45px_rgba(139,92,246,0.5)]
+                        animate-[spin_8s_linear_infinite_reverse]">
+            </div>
+
+            <!-- STATIC INITIALS -->
+            <span class="relative z-10 text-3xl sm:text-6xl md:text-7xl font-black text-white">
+              LO
+            </span>
+
+            <!-- TOP LABEL -->
+            <span class="absolute
+                         -top-5 sm:-top-8 md:-top-12
+                         -right-3 sm:-right-8 md:-right-16 lg:-right-20
+                         bg-gray-900 border border-white/10
+                         rounded-lg sm:rounded-xl
+                         px-2 sm:px-3 md:px-4
+                         py-1.5 sm:py-2 md:py-3
+                         text-[7px] sm:text-[10px] md:text-sm
+                         z-20 animate-bounce whitespace-nowrap">
+              &lt;/&gt; Web Development
+            </span>
+
+            <!-- BOTTOM LABEL -->
+            <span class="absolute
+                         -bottom-5 sm:-bottom-8 md:-bottom-12
+                         -left-3 sm:-left-8 md:-left-16 lg:-left-20
+                         bg-gray-900 border border-white/10
+                         rounded-lg sm:rounded-xl
+                         px-2 sm:px-3 md:px-4
+                         py-1.5 sm:py-2 md:py-3
+                         text-[7px] sm:text-[10px] md:text-sm
+                         z-20 animate-bounce whitespace-nowrap">
+              &lt;/&gt; Creativity
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="border-t border-white/10">
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+
+        <p class="text-accent uppercase tracking-widest text-sm font-semibold">
+          About me
+        </p>
+
+        <h2 class="text-3xl md:text-5xl font-bold mt-3">
+          Designing with people in mind.
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-10">
+
+          <article class="bg-white/5 border border-white/10 p-6 sm:p-7 rounded-2xl hover:border-violet-500/50">
+
+            <h3 class="text-xl font-bold mb-4">
+              My story
+            </h3>
+
+            <p class="text-gray-400 leading-7">
+              I am a UX/UI designer in continuous learning, interested in creating
+              digital experiences that are useful, intuitive, and visually
+              consistent. Through academic and collaborative projects, I
+              have explored how research, design, and technology can work
+              together to solve real needs.
+            </p>
+
+          </article>
+
+          <article class="bg-white/5 border border-white/10 p-6 sm:p-7 rounded-2xl hover:border-violet-500/50">
+
+            <h3 class="text-xl font-bold mb-4">
+              What I value
+            </h3>
+
+            <div class="space-y-5">
+
+              <div>
+                <p class="font-semibold text-accent">
+                  Technology with purpose
+                </p>
+                <p class="text-gray-400 text-sm mt-1">
+                  Understanding user needs and turning them into simple experiences.
+                </p>
+              </div>
+
+              <div>
+                <p class="font-semibold text-accent">
+                  Continuous learning
+                </p>
+                <p class="text-gray-400 text-sm mt-1">
+                  Exploring new tools and improving my skills.
+                </p>
+              </div>
+
+              <div>
+                <p class="font-semibold text-accent">
+                  Teamwork
+                </p>
+                <p class="text-gray-400 text-sm mt-1">
+                  Collaborating through communication and shared goals.
+                </p>
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="border-t border-white/10">
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+
+        <p class="text-accent uppercase tracking-widest text-sm font-semibold">
+          My toolkit
+        </p>
+
+        <h2 class="text-3xl md:text-5xl font-bold mt-3">
+          Skills & technologies
+        </h2>
+
+        <p class="text-gray-400 mt-4 max-w-2xl">
+          A mix of design, development, and collaboration skills I continue
+          to strengthen through practice and projects.
+        </p>
+
+        <!-- HORIZONTAL SKILLS CAROUSEL -->
+        <div class="skills-carousel mt-10">
+
+          <div class="skills-track">
+
+            <!-- FIRST SET -->
+
+            <div class="skill-card border p-5 rounded-xl">
+              <p class="text-accent text-2xl font-bold">&lt;/&gt;</p>
+              <h3 class="font-bold mt-3">HTML</h3>
+              <p class="text-gray-400 text-sm mt-1">Web structure</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl">
+              <p class="text-accent text-2xl font-bold">✳</p>
+              <h3 class="font-bold mt-3">Tailwind CSS</h3>
+              <p class="text-gray-400 text-sm mt-1">Responsive styling</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl">
+              <p class="text-accent text-2xl font-bold">JS</p>
+              <h3 class="font-bold mt-3">JavaScript</h3>
+              <p class="text-gray-400 text-sm mt-1">Learning and practice</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl">
+              <p class="text-accent text-2xl font-bold">F</p>
+              <h3 class="font-bold mt-3">Figma</h3>
+              <p class="text-gray-400 text-sm mt-1">Interface design and prototyping</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl">
+              <p class="text-accent text-2xl font-bold">UI</p>
+              <h3 class="font-bold mt-3">UI / UX</h3>
+              <p class="text-gray-400 text-sm mt-1">User-focused design</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl">
+              <p class="text-accent text-2xl font-bold">X</p>
+              <h3 class="font-bold mt-3">Microsoft Excel</h3>
+              <p class="text-gray-400 text-sm mt-1">Data and spreadsheets</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl">
+              <p class="text-accent text-2xl font-bold">BI</p>
+              <h3 class="font-bold mt-3">Power BI</h3>
+              <p class="text-gray-400 text-sm mt-1">Data visualization</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl">
+              <p class="text-accent text-2xl font-bold">EN</p>
+              <h3 class="font-bold mt-3">English</h3>
+              <p class="text-gray-400 text-sm mt-1">Language learning</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl">
+              <p class="text-accent text-2xl font-bold">✦</p>
+              <h3 class="font-bold mt-3">Teamwork</h3>
+              <p class="text-gray-400 text-sm mt-1">Communication and initiative</p>
+            </div>
+
+            <!-- DUPLICATED SET FOR CONTINUOUS ANIMATION -->
+
+            <div class="skill-card border p-5 rounded-xl" aria-hidden="true">
+              <p class="text-accent text-2xl font-bold">&lt;/&gt;</p>
+              <h3 class="font-bold mt-3">HTML</h3>
+              <p class="text-gray-400 text-sm mt-1">Web structure</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl" aria-hidden="true">
+              <p class="text-accent text-2xl font-bold">✳</p>
+              <h3 class="font-bold mt-3">Tailwind CSS</h3>
+              <p class="text-gray-400 text-sm mt-1">Responsive styling</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl" aria-hidden="true">
+              <p class="text-accent text-2xl font-bold">JS</p>
+              <h3 class="font-bold mt-3">JavaScript</h3>
+              <p class="text-gray-400 text-sm mt-1">Learning and practice</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl" aria-hidden="true">
+              <p class="text-accent text-2xl font-bold">F</p>
+              <h3 class="font-bold mt-3">Figma</h3>
+              <p class="text-gray-400 text-sm mt-1">Interface design and prototyping</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl" aria-hidden="true">
+              <p class="text-accent text-2xl font-bold">UI</p>
+              <h3 class="font-bold mt-3">UI / UX</h3>
+              <p class="text-gray-400 text-sm mt-1">User-focused design</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl" aria-hidden="true">
+              <p class="text-accent text-2xl font-bold">X</p>
+              <h3 class="font-bold mt-3">Microsoft Excel</h3>
+              <p class="text-gray-400 text-sm mt-1">Data and spreadsheets</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl" aria-hidden="true">
+              <p class="text-accent text-2xl font-bold">BI</p>
+              <h3 class="font-bold mt-3">Power BI</h3>
+              <p class="text-gray-400 text-sm mt-1">Data visualization</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl" aria-hidden="true">
+              <p class="text-accent text-2xl font-bold">EN</p>
+              <h3 class="font-bold mt-3">English</h3>
+              <p class="text-gray-400 text-sm mt-1">Language learning</p>
+            </div>
+
+            <div class="skill-card border p-5 rounded-xl" aria-hidden="true">
+              <p class="text-accent text-2xl font-bold">✦</p>
+              <h3 class="font-bold mt-3">Teamwork</h3>
+              <p class="text-gray-400 text-sm mt-1">Communication and initiative</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="border-t border-white/10">
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+
+        <p class="text-accent uppercase tracking-widest text-sm font-semibold">
+          Selected work
+        </p>
+
+        <h2 class="text-3xl md:text-5xl font-bold mt-3">
+          Projects & ideas
+        </h2>
+
+        <p class="text-gray-400 mt-4 max-w-2xl leading-7">
+          Academic and collaborative projects where I have explored
+          design, technology, and teamwork to create solutions to real needs.
+        </p>
+
+        <div class="flex flex-col gap-8 mt-12">
+
+          <!-- ROUTIFY - 2026 -->
+          <article class="project-card border border-violet-500/20 hover:border-violet-400/60">
+
+            <div class="project-visual bg-gradient-to-br from-violet-950 via-purple-800 to-purple-600">
+
+              <img
+                src="./logos/logoroutify.jpeg"
+                alt="Routify Logo"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="project-info">
+
+              <p class="text-violet-300 text-xs font-bold tracking-[0.18em]">
+                EXPOTECH · 2026
+              </p>
+
+              <h3 class="text-2xl sm:text-3xl font-bold mt-3">
+                Routify
+              </h3>
+
+              <p class="text-gray-400 leading-7 mt-4">
+                A transport operations management platform designed to
+                digitalize and automate daily route control. Administrators
+                can manage routes and operational records, while users can
+                check whether their bus is approaching or has already passed.
+              </p>
+
+              <div class="project-tags mt-5">
+
+                <span class="bg-violet-400/10 text-violet-300 text-xs px-3 py-1.5 rounded-full">
+                  Frontend Development
+                </span>
+
+                <span class="bg-violet-400/10 text-violet-300 text-xs px-3 py-1.5 rounded-full">
+                  Charts & Reports
+                </span>
+
+                <span class="bg-violet-400/10 text-violet-300 text-xs px-3 py-1.5 rounded-full">
+                  Team Project
+                </span>
+
+              </div>
+
+              <a href="./routify.html"
+                class="project-link inline-flex items-center gap-2 text-violet-300 font-semibold hover:text-white transition">
+                Learn More ↗
+              </a>
+
+            </div>
+          </article>
+
+          <!-- MEDSPARK - 2025 -->
+          <article class="project-card border border-sky-500/20 hover:border-sky-400/60">
+
+            <div class="project-visual bg-gradient-to-br from-sky-950 via-blue-800 to-cyan-600">
+
+              <img
+                src="./logos/logomedspark_mejorado.png"
+                alt="MedSpark Logo"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="project-info">
+
+              <p class="text-sky-300 text-xs font-bold tracking-[0.18em]">
+                EXPO NEXT MILE · 2025
+              </p>
+
+              <h3 class="text-2xl sm:text-3xl font-bold mt-3">
+                MedSpark
+              </h3>
+
+              <p class="text-gray-400 leading-7 mt-4">
+                A digital platform designed to connect people with medical
+                assistance while encouraging savings through a cashback
+                system. Users could accumulate savings from purchases at
+                partner pharmacies, while pharmacies gained visibility
+                and new customers through the platform.
+              </p>
+
+              <div class="project-tags mt-5">
+
+                <span class="bg-sky-400/10 text-sky-300 text-xs px-3 py-1.5 rounded-full">
+                  React.js
+                </span>
+
+                <span class="bg-sky-400/10 text-sky-300 text-xs px-3 py-1.5 rounded-full">
+                  JavaScript
+                </span>
+
+                <span class="bg-sky-400/10 text-sky-300 text-xs px-3 py-1.5 rounded-full">
+                  APIs
+                </span>
+
+                <span class="bg-sky-400/10 text-sky-300 text-xs px-3 py-1.5 rounded-full">
+                  Teamwork
+                </span>
+
+              </div>
+
+              <a href="./medspark.html"
+                class="project-link inline-flex items-center gap-2 text-sky-300 font-semibold hover:text-white transition">
+                Learn More ↗
+              </a>
+
+            </div>
+          </article>
+
+          <!-- TRUENEWS - 2024 -->
+          <article class="project-card border border-purple-500/20 hover:border-purple-400/60">
+
+            <div class="project-visual bg-gradient-to-br from-purple-950 via-violet-800 to-fuchsia-700">
+
+              <img
+                src="./logos/logotruenews_mejorado.png"
+                alt="TrueNews Logo"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="project-info">
+
+              <p class="text-purple-300 text-xs font-bold tracking-[0.18em]">
+                HACKATHON · 2024
+              </p>
+
+              <h3 class="text-2xl sm:text-3xl font-bold mt-3">
+                TrueNews
+              </h3>
+
+              <p class="text-gray-400 leading-7 mt-4">
+                A collaborative project focused on evaluating the credibility
+                of news before sharing it online. The application aims to help
+                people identify whether information may be real or false
+                through a digital news evaluation experience.
+              </p>
+
+              <div class="project-tags mt-5">
+
+                <span class="bg-purple-400/10 text-purple-300 text-xs px-3 py-1.5 rounded-full">
+                  UX/UI Design
+                </span>
+
+                <span class="bg-purple-400/10 text-purple-300 text-xs px-3 py-1.5 rounded-full">
+                  Logo Design
+                </span>
+
+                <span class="bg-purple-400/10 text-purple-300 text-xs px-3 py-1.5 rounded-full">
+                  Team Leadership
+                </span>
+
+              </div>
+
+              <a href="./truenews.html"
+                class="project-link inline-flex items-center gap-2 text-purple-300 font-semibold hover:text-white transition">
+                Learn More ↗
+              </a>
+
+            </div>
+          </article>
+
+        </div>
+
+        <p class="text-gray-500 text-sm mt-8">
+          More projects and presentations will be added soon.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="border-t border-white/10">
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+
+        <p class="text-accent uppercase tracking-widest text-sm font-semibold">
+          Learning & growth
+        </p>
+
+        <h2 class="text-3xl md:text-5xl font-bold mt-3">
+          Certifications & achievements
+        </h2>
+
+        <p class="text-gray-400 mt-4 max-w-2xl">
+          A collection of certifications, courses, and academic experiences
+          that represent my continuous learning journey.
+        </p>
+  
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+
+          <!-- MICROSOFT EXCEL 2021 -->
+          <article class="border rounded-xl p-6 hover:border-violet-500 transition">
+            <p class="text-accent text-2xl">✧</p>
+            <h3 class="font-bold mt-3">Microsoft Excel 2021</h3>
+            <p class="text-gray-400 text-sm mt-2">
+              Microsoft Excel certification.
+            </p>
+
+            <a href="./certificates/Certificado de Excel 2021.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block text-violet-300 text-sm font-semibold mt-5 hover:text-white transition">
+              View Certificate ↗
+            </a>
+          </article>
+
+          <!-- MICROSOFT EXCEL EXPERT -->
+          <article class="border rounded-xl p-6 hover:border-violet-500 transition">
+            <p class="text-accent text-2xl">◎</p>
+            <h3 class="font-bold mt-3">Microsoft Excel Expert</h3>
+            <p class="text-gray-400 text-sm mt-2">
+              Advanced Microsoft Excel certification.
+            </p>
+            <a href="./certificates/Excel Expert Certification.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block text-violet-300 text-sm font-semibold mt-5 hover:text-white transition">
+              View Certificate ↗
+            </a>
+          </article>
+
+          <!-- POWER BI -->
+          <article class="border rounded-xl p-6 hover:border-violet-500 transition">
+            <p class="text-accent text-2xl">✦</p>
+            <h3 class="font-bold mt-3">Power BI</h3>
+            <p class="text-gray-400 text-sm mt-2">
+              Certification in data analysis and visualization with Power BI.
+            </p>
+            <a href="./certificates/pwerBI.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block text-violet-300 text-sm font-semibold mt-5 hover:text-white transition">
+              View Certificate ↗
+            </a>
+          </article>
+
+          <!-- UX DESIGNER -->
+          <article class="border rounded-xl p-6 hover:border-violet-500 transition">
+            <p class="text-accent text-2xl">⌘</p>
+            <h3 class="font-bold mt-3">UX Designer</h3>
+            <p class="text-gray-400 text-sm mt-2">
+              I design user-centered digital experiences that are clear, accessible, and easy to use.
+            </p>
+            <a href="./certificates/certificado diseño UX.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block text-violet-300 text-sm font-semibold mt-5 hover:text-white transition">
+              View Certificate ↗
+            </a>
+          </article>
+
+          <!-- UX EVALUATOR -->
+          <article class="border rounded-xl p-6 hover:border-violet-500 transition">
+            <p class="text-accent text-2xl">✧</p>
+            <h3 class="font-bold mt-3">UX Evaluator</h3>
+            <p class="text-gray-400 text-sm mt-2">
+              I evaluate digital products to find usability issues and suggest clear improvements
+            </p>
+            <a href="./certificates/certificado UX.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block text-violet-300 text-sm font-semibold mt-5 hover:text-white transition">
+              View Certificate ↗
+            </a>
+          </article>
+
+          <!-- APPLY FOR A JOB -->
+          <article class="border rounded-xl p-6 hover:border-violet-500 transition">
+            <p class="text-accent text-2xl">✦</p>
+            <h3 class="font-bold mt-3">Apply for a job</h3>
+            <p class="text-gray-400 text-sm mt-2">
+              UX/UI Designer and evaluator looking for an opportunity to apply my skills, keep learning, and help create user-centered digital products.
+            </p>
+            <a href="./certificates/certificado de empleo.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block text-violet-300 text-sm font-semibold mt-5 hover:text-white transition">
+              View Certificate ↗
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="border-t border-white/10">
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+
+        <div class="contact-panel border rounded-3xl p-6 sm:p-8 md:p-14 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+
+          <div>
+
+            <p class="text-accent uppercase tracking-widest text-sm font-semibold">
+              Let's connect
+            </p>
+
+            <h2 class="text-3xl md:text-5xl font-bold mt-3 max-w-xl">
+              Have an opportunity or an idea?
+            </h2>
+
+            <p class="text-gray-300 mt-5 max-w-lg leading-7">
+              I am open to internships, learning opportunities,
+              collaboration, and conversations about technology.
+            </p>
+
+          </div>
+
+          <div class="flex flex-wrap gap-3 w-full md:w-auto">
+
+            <a href="#"
+              class="bg-accent text-dark font-bold px-6 py-3 rounded-xl hover:bg-violet-400 transition">
+              (503) 7378-3935
+            </a>
+
+            <a href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="border border-white/30 px-6 py-3 rounded-xl hover:border-accent transition">
+              LinkedIn
+            </a>
+
+            <a href="https://github.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="border border-white/30 px-6 py-3 rounded-xl hover:border-accent transition">
+              GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10">
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 flex flex-wrap justify-between gap-3 text-gray-500 text-sm">
+
+      <p>
+        © <span id="year"></span> Linsay Orellana. All rights reserved.
+      </p>
+
+      <a href="#home" class="hover:text-accent transition">
+        Back to top ↑
+      </a>
+
+    </div>
+
+  </footer>
+
+  <!-- CURRENT YEAR -->
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
+ 
